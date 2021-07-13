@@ -123,10 +123,10 @@ return [
 
     'user_image' => 'Imagem do usuário',
     'online' => 'Online',
-    'controller_route_404' => 'Controle / Rota não encontra]',
+    'controller_route_404' => 'Controle / Rota não encontrada',
     'home' => 'Inicio',
-    'Notifications' => 'Notifications',
-    'Privileges' => 'Privileges',
+    'Notifications' => 'Notificações',
+    'Privileges' => 'Privilégios',
     'Privileges_Roles' => 'Privilégios',
     'Add_New_Privilege' => 'Adicionar novo Privilégio',
     'List_Privilege' => 'Listar Privilégios',
@@ -171,7 +171,7 @@ return [
     'notification_notification' => 'Notificações',
     'notification_new' => 'Você tem uma nova notificação!',
 
-    'login_register_style' => 'Login Register Style',
+    'login_register_style' => 'Personalizar Tela de Login',
     'email_setting' => 'Configurações de E-mail',
     'application_setting' => 'Configurações do Aplicativo',
 
@@ -234,16 +234,16 @@ return [
     //datamodal
     'datamodal_select' => 'Select',
     'datamodal_search_and_enter' => 'Search and enter...',
-    'datamodal_enter_to_search' => 'Enter to search',
-    'datamodal_browse_data' => 'Browse Data',
-    'datamodal_browse_file' => 'Browse File',
+    'datamodal_enter_to_search' => 'Digite sua busca',
+    'datamodal_browse_data' => 'Selecionar Data',
+    'datamodal_browse_file' => 'Selecionar Arquivo',
 
     //child
     'table_detail' => 'Detalhes',
-    'your_file_size_is_too_big' => 'Your file size is too big',
-    'save_changes' => 'Save Changes',
-    'please_complete_the_form' => 'Please complete the form !',
-    'this_field_is_required' => 'This field is required',
-    'text_form' => 'Form',
-    "your_file_extension_is_not_allowed " => "Your file extension is not allowed !",
+    'your_file_size_is_too_big' => 'Seu arquivo é muito grande',
+    'save_changes' => 'Salvar Alterações',
+    'please_complete_the_form' => 'Por favor preencha todo o formulário !',
+    'this_field_is_required' => 'Este campo é obrigatório.',
+    'text_form' => 'Formulário',
+    "your_file_extension_is_not_allowed " => "Está extenção de arquivo não é permitida !",
 ];
