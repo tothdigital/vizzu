@@ -16,7 +16,7 @@ return [
 
     'PASSWORD_FIELDS_CANDIDATE' => 'password,pass,pwd,passwrd,sandi,pin',
 
-    'DATE_FIELDS_CANDIDATE' => 'date,data,tanggal,tgl,created_at,updated_at,deleted_at,last_activity',
+    'DATE_FIELDS_CANDIDATE' => 'date,data,tanggal,tgl,created_at,updated_at,deleted_at,last_activity, data_nascimento',
 
     'EMAIL_FIELDS_CANDIDATE' => 'email,mail,email_address',
 

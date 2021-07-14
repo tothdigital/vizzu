@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminVizzuProfissionaisController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminVizzuClientesController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,42 +25,41 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "vizzu_profissionais";
+			$this->table = "vizzu_clientes";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nome do Profissional","name"=>"name"];
+			$this->col[] = ["label"=>"Name","name"=>"name"];
+			$this->col[] = ["label"=>"Sexo","name"=>"sexo"];
 			$this->col[] = ["label"=>"Status","name"=>"status"];
-			$this->col[] = ["label"=>"Última Atividade","name"=>"last_activity"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nome Completo','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'E-mail','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:vizzu_profissionais','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Senha','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nome Completo','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Você pode digitar somente letras'];
+			$this->form[] = ['label'=>'E-mail','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:vizzu_clientes','width'=>'col-sm-10','placeholder'=>'Por favor digite um endereço de e-mail válido'];
+			$this->form[] = ['label'=>'Senha','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Mínimo de 5 caracteres. Por favor deixe vazio se você não quer alterar a senha.'];
 			$this->form[] = ['label'=>'CPF/CPNJ','name'=>'cpf_cnpj','type'=>'text','validation'=>'formato_cpf_cnpj|cpf_cnpj','width'=>'col-sm-10','help'=>'CPF no formato 000.000.000-00 ou CPNJ no formato 00.000.000/0000-00.'];
 			$this->form[] = ['label'=>'Celular','name'=>'celular','type'=>'text','validation'=>'required|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
+			$this->form[] = ['label'=>'Data de Nascimento','name'=>'data_nascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ativo;Inativo'];
-			$this->form[] = ['label'=>'Foto do Perfil','name'=>'profile_photo_path','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Categorias','name'=>'categorias','type'=>'select2','width'=>'col-sm-9','datatable'=>'vizzu_subcategorias,nome','relationship_table'=>'vizzu_prof_rel_cat'];
+			$this->form[] = ['label'=>'Foto de Perfil','name'=>'profile_photo_path','type'=>'upload','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Nome Completo','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'E-mail','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:vizzu_profissionais','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Senha','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'CPF/CPNJ','name'=>'cpf_cnpj','type'=>'text','validation'=>'formato_cpf_cnpj|cpf_cnpj','width'=>'col-sm-10','help'=>'CPF no formato 000.000.000-00 ou CPNJ no formato 00.000.000/0000-00.'];
-			//$this->form[] = ['label'=>'Celular','name'=>'celular','type'=>'text','validation'=>'required|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
-			//$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ativo;Inativo'];
-			//$this->form[] = ['label'=>'Foto do Perfil','name'=>'profile_photo_path','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Categorias','name'=>'categorias','type'=>'select2','width'=>'col-sm-9','datatable'=>'vizzu_subcategorias,nome','relationship_table'=>'vizzu_prof_rel_cat','datatable_format'=>'id,\' - \',nome"'];
+			//$this->form[] = ["label"=>"Name","name"=>"name","type"=>"text","required"=>TRUE,"validation"=>"required|string|min:3|max:70","placeholder"=>"Você pode digitar somente letras"];
+			//$this->form[] = ["label"=>"Email","name"=>"email","type"=>"email","required"=>TRUE,"validation"=>"required|min:1|max:255|email|unique:vizzu_clientes","placeholder"=>"Por favor digite um endereço de e-mail válido"];
+			//$this->form[] = ["label"=>"Password","name"=>"password","type"=>"password","required"=>TRUE,"validation"=>"min:3|max:32","help"=>"Mínimo de 5 caracteres. Por favor deixe vazio se você não quer alterar a senha."];
+			//$this->form[] = ["label"=>"Cpf Cnpj","name"=>"cpf_cnpj","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Celular","name"=>"celular","type"=>"number","required"=>TRUE,"validation"=>"required|numeric","placeholder"=>"Você pode digitar somente números"];
+			//$this->form[] = ["label"=>"Sexo","name"=>"sexo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Data Nascimento","name"=>"data_nascimento","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+			//$this->form[] = ["label"=>"Status","name"=>"status","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Profile Photo Path","name"=>"profile_photo_path","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			# OLD END FORM
-
 
 			/* 
 	        | ---------------------------------------------------------------------- 
@@ -76,28 +75,16 @@
 	        */
 	        $this->sub_module = array();
 
-	           	$columns[] = [
-	       		'label'=>'Dia da Semana',
-	       		'name'=>'dia_semana',
-	       		'type'=>'radio',
-	       		'width'=>'col-sm-10',
-	       		'dataenum'=>'Segunda-Feira;Terça-Feira;Quarta-Feira;Quinta-Feira;Sexta-Feira;Sábado;Domingo'
-	       	];
-			$columns[] = ['label'=>'Horário de Inicío','name'=>'horario_entrada','type'=>'text','width'=>'col-sm-3'];
-			$columns[] = ['label'=>'Horário de Fim','name'=>'horario_saida','type'=>'text','width'=>'col-sm-3'];
-			$columns[] = ['label'=>'Horário de Pausa - Início','name'=>'horario_pausa','type'=>'text','width'=>'col-sm-3'];
-			$columns[] = ['label'=>'Horário de Pausa - Fim','name'=>'horario_retorno','type'=>'text','width'=>'col-sm-3'];
-
+	        $columns[] = ['label'=>'CEP','name'=>'cep','type'=>'text','required'=>true,'width'=>'col-sm-10'];
+			$columns[] = ['label'=>'Logradouro','name'=>'logradouro','type'=>'text','required'=>true,'width'=>'col-sm-10'];
+			$columns[] = ['label'=>'Número','name'=>'numero','type'=>'text','required'=>true,'width'=>'col-sm-10'];
+			$columns[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text'];
+			$columns[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','required'=>true,'width'=>'col-sm-10'];
+			$columns[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','required'=>true,'width'=>'col-sm-10'];
+			$columns[] = ['label'=>'Estado/UF','name'=>'uf','type'=>'text','required'=>true,'width'=>'col-sm-10'];
+			$columns[] = ['label'=>'Ponto de Referência','name'=>'referencia','type'=>'text'];
 			$columns[] = ['label'=>'Status','name'=>'status','type'=>'radio','dataenum'=>'Ativo;Inativo'];
-			$this->form[] = ['label'=>'Disponibilidade de Horários','name'=>'vizzu_profissionais_agenda','type'=>'child','columns'=>$columns,'table'=>'vizzu_profissionais_agenda','foreign_key'=>'id_profissional', 'width'=>'col-sm-10'];
-
-
-
-	  //       $columns[] = ['label'=>'Nome da SubCategoria','name'=>'nome','type'=>'text','required'=>true];
-			// $columns[] = ['label'=>'Descrição','name'=>'descricao','type'=>'text'];
-			// $columns[] = ['label'=>'Status','name'=>'status','type'=>'radio','required'=>true,'dataenum'=>'Ativo;Inativo'];
-			// $this->form[] = ['label'=>'Sub Categorias','name'=>'vizzu_subcategorias','type'=>'child','columns'=>$columns,'table'=>'vizzu_subcategorias','foreign_key'=>'pai_id', 'width'=>'col-sm-10'];
-
+			$this->form[] = ['label'=>'Endereços','name'=>'vizzu_clientes_end','type'=>'child','columns'=>$columns,'table'=>'vizzu_clientes_end','foreign_key'=>'id_cliente', 'width'=>'col-sm-10'];
 
 	        /* 
 	        | ---------------------------------------------------------------------- 
@@ -181,9 +168,6 @@
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-	        // $this->script_js = NULL;
-
-
 	        $this->script_js = "
 			  $(function() {
 	            if (cpf_cnpj !== null) {
@@ -192,10 +176,11 @@
 		        if (celular !== null) {
 		            $(celular).inputmask({\"mask\": ['(99) 9999[9]-9999']});
 		        }
+		        if (cep !== null) {
+		            $(cep).inputmask({\"mask\": ['99999-999']});
+		        }
 			  });
 			";
-
-
             /*
 	        | ---------------------------------------------------------------------- 
 	        | Include HTML Code before index table 
