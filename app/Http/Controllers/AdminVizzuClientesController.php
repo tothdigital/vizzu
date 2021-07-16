@@ -81,7 +81,7 @@
 			$columns[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text'];
 			$columns[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','required'=>true,'width'=>'col-sm-10'];
 			$columns[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','required'=>true,'width'=>'col-sm-10'];
-			$columns[] = ['label'=>'Estado/UF','name'=>'uf','type'=>'text','required'=>true,'width'=>'col-sm-10'];
+			$columns[] = ['label'=>'Estado','name'=>'uf','type'=>'text','required'=>true,'width'=>'col-sm-10'];
 			$columns[] = ['label'=>'Ponto de Referência','name'=>'referencia','type'=>'text'];
 			$columns[] = ['label'=>'Status','name'=>'status','type'=>'radio','dataenum'=>'Ativo;Inativo'];
 			$this->form[] = ['label'=>'Endereços','name'=>'vizzu_clientes_end','type'=>'child','columns'=>$columns,'table'=>'vizzu_clientes_end','foreign_key'=>'id_cliente', 'width'=>'col-sm-10'];
