@@ -5,12 +5,12 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminVizzuClientesController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminVizzuProfissionaisAgendaController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
-			$this->title_field = "name";
+			$this->title_field = "id";
 			$this->limit = "20";
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
@@ -25,40 +25,40 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "vizzu_clientes";
+			$this->table = "vizzu_profissionais_agenda";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Name","name"=>"name"];
-			$this->col[] = ["label"=>"Sexo","name"=>"sexo"];
+			$this->col[] = ["label"=>"Profissional","name"=>"id_profissional","join"=>"profissional,id"];
+			$this->col[] = ["label"=>"Dia Semana","name"=>"dia_semana"];
+			$this->col[] = ["label"=>"Horario Entrada","name"=>"horario_entrada"];
+			$this->col[] = ["label"=>"Horario Pausa","name"=>"horario_pausa"];
+			$this->col[] = ["label"=>"Horario Retorno","name"=>"horario_retorno"];
+			$this->col[] = ["label"=>"Horario Saida","name"=>"horario_saida"];
 			$this->col[] = ["label"=>"Status","name"=>"status"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nome Completo','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Você pode digitar somente letras'];
-			$this->form[] = ['label'=>'E-mail','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:vizzu_clientes','width'=>'col-sm-10','placeholder'=>'Por favor digite um endereço de e-mail válido'];
-			$this->form[] = ['label'=>'Senha','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Mínimo de 5 caracteres. Por favor deixe vazio se você não quer alterar a senha.'];
-			$this->form[] = ['label'=>'CPF/CPNJ','name'=>'cpf_cnpj','type'=>'text','validation'=>'formato_cpf_cnpj|cpf_cnpj','width'=>'col-sm-10','help'=>'CPF no formato 000.000.000-00 ou CPNJ no formato 00.000.000/0000-00.'];
-			$this->form[] = ['label'=>'Celular','name'=>'celular','type'=>'text','validation'=>'required|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
-			$this->form[] = ['label'=>'Data de Nascimento','name'=>'data_nascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ativo;Inativo'];
-			$this->form[] = ['label'=>'Foto de Perfil','name'=>'profile_photo_path','type'=>'upload','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Profissional','name'=>'id_profissional','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'profissional,id'];
+			$this->form[] = ['label'=>'Dia da Semana','name'=>'dia_semana','type'=>'radio','width'=>'col-sm-10','dataenum'=>'Segunda-Feira;Terça-Feira;Quarta-Feira;Quinta-Feira;Sexta-Feira;Sábado;Domingo'];
+			$this->form[] = ['label'=>'Horario Entrada','name'=>'horario_entrada','type'=>'time','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Horario de Almoço (Inicio)','name'=>'horario_pausa','type'=>'time','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Horario de Almoço (Fim)','name'=>'horario_retorno','type'=>'time','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Horario Saida','name'=>'horario_saida','type'=>'time','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','width'=>'col-sm-10','dataenum'=>'Ativo;Inativo'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Nome Completo','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Você pode digitar somente letras'];
-			//$this->form[] = ['label'=>'E-mail','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:vizzu_clientes','width'=>'col-sm-10','placeholder'=>'Por favor digite um endereço de e-mail válido'];
-			//$this->form[] = ['label'=>'Senha','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Mínimo de 5 caracteres. Por favor deixe vazio se você não quer alterar a senha.'];
-			//$this->form[] = ['label'=>'CPF/CPNJ','name'=>'cpf_cnpj','type'=>'text','validation'=>'formato_cpf_cnpj|cpf_cnpj','width'=>'col-sm-10','help'=>'CPF no formato 000.000.000-00 ou CPNJ no formato 00.000.000/0000-00.'];
-			//$this->form[] = ['label'=>'Celular','name'=>'celular','type'=>'text','validation'=>'required|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
-			//$this->form[] = ['label'=>'Data de Nascimento','name'=>'data_nascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ativo;Inativo'];
-			//$this->form[] = ['label'=>'Foto de Perfil','name'=>'profile_photo_path','type'=>'upload','width'=>'col-sm-10'];
+			//$this->form[] = ["label"=>"Profissional","name"=>"id_profissional","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"profissional,id"];
+			//$this->form[] = ["label"=>"Dia Semana","name"=>"dia_semana","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ["label"=>"Horario Entrada","name"=>"horario_entrada","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ["label"=>"Horario Pausa","name"=>"horario_pausa","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ["label"=>"Horario Retorno","name"=>"horario_retorno","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ["label"=>"Horario Saida","name"=>"horario_saida","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ["label"=>"Status","name"=>"status","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
 			# OLD END FORM
 
 			/* 
@@ -75,19 +75,6 @@
 	        */
 	        $this->sub_module = array();
 
-	        $columns[] = ['label'=>'CEP','name'=>'cep','type'=>'text','required'=>'true', 'validation'=>'required|min:0','width'=>'col-sm-10'];
-			$columns[] = ['label'=>'Logradouro','name'=>'logradouro','type'=>'text','required'=>true,'width'=>'col-sm-10'];
-			$columns[] = ['label'=>'Número','name'=>'numero','type'=>'text','required'=>true,'width'=>'col-sm-10'];
-			$columns[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text'];
-			$columns[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','required'=>true,'width'=>'col-sm-10'];
-			$columns[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','required'=>true,'width'=>'col-sm-10'];
-			$columns[] = ['label'=>'Estado/UF','name'=>'uf','type'=>'text','required'=>true,'width'=>'col-sm-10'];
-			$columns[] = ['label'=>'Ponto de Referência','name'=>'referencia','type'=>'text'];
-			$columns[] = ['label'=>'Status','name'=>'status','type'=>'radio','dataenum'=>'Ativo;Inativo'];
-			$this->form[] = ['label'=>'Endereços','name'=>'vizzu_clientes_end','type'=>'child','columns'=>$columns,'table'=>'vizzu_clientes_end','foreign_key'=>'id_cliente', 'width'=>'col-sm-10'];
-
-
-			$this->sub_module[] = ['label'=>'Agendamento de Serviços','path'=>'vizzu_clientes_agendamento','parent_columns'=>'name','foreign_key'=>'id_cliente','button_color'=>'success','button_icon'=>'fa fa-bars'];
 
 	        /* 
 	        | ---------------------------------------------------------------------- 
@@ -171,29 +158,9 @@
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-	        $this->script_js = "
-			  $(function() {
-			  	if(typeof cpf_cnpj !== 'undefined'){
+	        $this->script_js = NULL;
 
-		            if (cpf_cnpj !== null) {
-			            $(cpf_cnpj).inputmask({\"mask\": ['999.999.999-99', '99.999.999/9999-99']});
-			        }
 
-			    }
-			    if(typeof celular !== 'undefined'){
-
-			        if (celular !== null) {
-			            $(celular).inputmask({\"mask\": ['(99) 9999[9]-9999']});
-			        }
-
-			    }
-			    if(typeof enderecoscep !== 'undefined'){
-			        if (enderecoscep !== null) {
-			            $(enderecoscep).inputmask({\"mask\": ['99999-999']});
-			        }
-			    }
-			  });
-			";
             /*
 	        | ---------------------------------------------------------------------- 
 	        | Include HTML Code before index table 

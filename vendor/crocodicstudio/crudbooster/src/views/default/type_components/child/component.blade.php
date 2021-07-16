@@ -33,9 +33,9 @@ $name = str_slug($form['label'], '');
                                                                                         title="{{cbLang('this_field_is_required')}}">*</span> @endif
                                                 </label>
                                             @endif
-                                            <div class="col-sm-10">
+                                            <div class="{{$col_width?:'col-sm-10'}}">
                                                 @if($col['type']=='text')
-                                                    <input id='{{$name_column}}' type='text'
+                                                    <input id='{{$name_column}}' name='{{$name_column}}' type='text'
                                                            {{ ($col['max'])?"maxlength='".$col['max']."'":"" }} name='child-{{$col["name"]}}'
                                                            class='form-control {{$col['required']?"required":""}}'
                                                             {{($col['readonly']===true)?"readonly":""}}

@@ -76,21 +76,20 @@
 	        */
 	        $this->sub_module = array();
 
-	           	$columns[] = [
-	       		'label'=>'Dia da Semana',
-	       		'name'=>'dia_semana',
-	       		'type'=>'radio',
-	       		'width'=>'col-sm-10',
-	       		'dataenum'=>'Segunda-Feira;Terça-Feira;Quarta-Feira;Quinta-Feira;Sexta-Feira;Sábado;Domingo'
-	       	];
-			$columns[] = ['label'=>'Horário de Inicío','name'=>'horario_entrada','type'=>'text','width'=>'col-sm-3'];
-			$columns[] = ['label'=>'Horário de Fim','name'=>'horario_saida','type'=>'text','width'=>'col-sm-3'];
-			$columns[] = ['label'=>'Horário de Pausa - Início','name'=>'horario_pausa','type'=>'text','width'=>'col-sm-3'];
-			$columns[] = ['label'=>'Horário de Pausa - Fim','name'=>'horario_retorno','type'=>'text','width'=>'col-sm-3'];
+			$this->sub_module[] = ['label'=>'Serviços','path'=>'vizzu_servicos','parent_columns'=>'name','foreign_key'=>'id_profissional','button_color'=>'success','button_icon'=>'fa fa-bars'];
 
-			$columns[] = ['label'=>'Status','name'=>'status','type'=>'radio','dataenum'=>'Ativo;Inativo'];
-			$this->form[] = ['label'=>'Disponibilidade de Horários','name'=>'vizzu_profissionais_agenda','type'=>'child','columns'=>$columns,'table'=>'vizzu_profissionais_agenda','foreign_key'=>'id_profissional', 'width'=>'col-sm-10'];
+			$this->sub_module[] = ['label'=>'Disponibilidade','path'=>'vizzu_profissionais_agenda','parent_columns'=>'name','foreign_key'=>'id_profissional','button_color'=>'success','button_icon'=>'fa fa-bars'];
 
+			//submodulo para serviços
+
+			// $columns2[] = ['label'=>'Nome do Serviço','name'=>'nome','type'=>'text','width'=>'col-sm-3'];
+			// $columns2[] = ['label'=>'Descrição do Serviço','name'=>'descricao','type'=>'text','width'=>'col-sm-3'];
+			// $columns2[] = ['label'=>'Valor do Serviço','name'=>'valor','type'=>'money', 'priceformat_parameters' => ['prefix' => 'R$ ', 'thousandsSeparator' => '.', 'centsSeparator' => ',', 'centsLimit' => 2 ]];
+			// $columns2[] = ['label'=>'Tempo de Execução','name'=>'tempo_execucao','type'=>'text','width'=>'col-sm-3'];
+
+			// $columns2[] = ['label'=>'Status','name'=>'status','type'=>'radio','dataenum'=>'Ativo;Inativo'];
+			// $columns2[] = ['label'=>'Categorias','name'=>'id_subcategoria','type'=>'select','width'=>'col-sm-9','datatable'=>'vizzu_subcategorias,nome'];
+			// $this->form[] = ['label'=>'Serviços do Profissional','name'=>'vizzu_servicos','type'=>'child','columns'=>$columns2,'table'=>'vizzu_servicos','foreign_key'=>'id_profissional', 'width'=>'col-sm-10'];
 
 
 	  //       $columns[] = ['label'=>'Nome da SubCategoria','name'=>'nome','type'=>'text','required'=>true];
@@ -186,12 +185,25 @@
 
 	        $this->script_js = "
 			  $(function() {
-	            if (cpf_cnpj !== null) {
-		            $(cpf_cnpj).inputmask({\"mask\": ['999.999.999-99', '99.999.999/9999-99']});
-		        }
-		        if (celular !== null) {
-		            $(celular).inputmask({\"mask\": ['(99) 9999[9]-9999']});
-		        }
+			  	if(typeof cpf_cnpj !== 'undefined'){
+
+		            if (cpf_cnpj !== null) {
+			            $(cpf_cnpj).inputmask({\"mask\": ['999.999.999-99', '99.999.999/9999-99']});
+			        }
+
+			    }
+			    if(typeof celular !== 'undefined'){
+
+			        if (celular !== null) {
+			            $(celular).inputmask({\"mask\": ['(99) 9999[9]-9999']});
+			        }
+
+			    }
+			    if(typeof enderecoscep !== 'undefined'){
+			        if (enderecoscep !== null) {
+			            $(enderecoscep).inputmask({\"mask\": ['99999-999']});
+			        }
+			    }
 			  });
 			";
 

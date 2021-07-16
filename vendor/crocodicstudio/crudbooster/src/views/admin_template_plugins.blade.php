@@ -61,15 +61,6 @@
         $('.datatables-simple').DataTable();
     })
 
-    // $(document).ready(function(){
-    //     if (cpf_cnpj !== null) {
-    //         $(cpf_cnpj).inputmask({"mask": ['999.999.999-99', '99.999.999/9999-99']});
-    //     }
-    //     if (celular !== null) {
-    //         $(celular).inputmask({"mask": ['(99) 9999[9]-9999']});
-    //     }
-    // });
-
 </script>
 <script src="{{asset('vendor/crudbooster/assets/js/main.js').'?r='.time()}}"></script>
 

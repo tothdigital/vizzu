@@ -9,10 +9,12 @@
         $(function () {
             $('.input_date').datepicker({
                 format: 'yyyy-mm-dd',
-                @if (in_array(App::getLocale(), ['ar', 'fa']))
+                //format: 'dd-mm-yyyy',
+                @if (in_array(App::getLocale(), ['ar', 'fa', 'pt-BR', 'pt_br']))
                 rtl: true,
                 @endif
-                language: lang
+                language: lang,
+                todayBtn: true
             });
 
             $('.open-datetimepicker').click(function () {
