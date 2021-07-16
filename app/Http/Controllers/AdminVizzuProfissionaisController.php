@@ -45,7 +45,7 @@
 			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
 			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ativo;Inativo'];
 			$this->form[] = ['label'=>'Foto do Perfil','name'=>'profile_photo_path','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Categorias','name'=>'categorias','type'=>'select2','width'=>'col-sm-9','datatable'=>'vizzu_subcategorias,nome','relationship_table'=>'vizzu_prof_rel_cat'];
+
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -60,6 +60,8 @@
 			//$this->form[] = ['label'=>'Foto do Perfil','name'=>'profile_photo_path','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Categorias','name'=>'categorias','type'=>'select2','width'=>'col-sm-9','datatable'=>'vizzu_subcategorias,nome','relationship_table'=>'vizzu_prof_rel_cat','datatable_format'=>'id,\' - \',nome"'];
 			# OLD END FORM
+
+						// $this->form[] = ['label'=>'Categorias','name'=>'categorias','type'=>'select2','width'=>'col-sm-9','datatable'=>'vizzu_subcategorias,nome','relationship_table'=>'vizzu_prof_rel_cat'];
 
 
 			/* 
