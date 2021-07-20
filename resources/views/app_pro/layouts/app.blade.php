@@ -6,7 +6,8 @@
 	<meta name="description" content="">
 	<meta name="author" content="Ramoel Assis, Paulo Henrique e Fabrício Aguilera">
 	<meta name="generator" content="Vizzu 0.1.0">
-	<title>Vizzu - @yield('title')</title>
+	<!-- <title>Vizzu - @yield('title')</title> -->
+    <title>Vizzu</title>
 
     <!-- Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
@@ -40,18 +41,14 @@
 </head>
 
 <body class="text-center">
-    @section('sidebar')
+    <!-- @section('sidebar') -->
 
-    @show
+    <!-- @show -->
 
     <div class="container">
         @yield('content')
     </div>
     <div class="text-center footer">
-
-        <h4>The writer needs a job</h4>
-        <h4>+234 806 605 6233</h4>
-        <h4>kingsconsult001@gmail.com</h4>
 
     </div>
 
