@@ -21,7 +21,7 @@
           <input type="checkbox" value="remember-me">
           <span class="checkmark"></span>
           Remember me
-        </label>
+        </label> 
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
