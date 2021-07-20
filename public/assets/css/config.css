@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --primary: #7B1FA2;
+  --primary-light: #AE52D4;
+  --primary-dark: #4A0072;
+  --secondary: #C6FF00;
+  --secondary-light: #FDFF58;
+  --secondary-dark: #90CC00;
+}

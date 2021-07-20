@@ -4,7 +4,7 @@
 	<main class="form-signin">
 
 		<form>
-			<img class="mb-4" src="img/logo.png" alt="" width="250" height="60">
+			<img class="mb-g4" src="img/logo.png" alt="" width="250" height="60">
 			<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
 			<div class="form-floating">

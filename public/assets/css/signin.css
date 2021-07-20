@@ -1,0 +1,146 @@
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url('../img/bg-login.jpg');
+  background-position:center top;
+  background-size: cover;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin h1 {
+  color: #fff
+}
+
+.form-signin label {
+  color: #fff
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: var(--primary);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: var(--primary);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+.form-floating p a {
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+.form-floating p a:hover {
+  text-decoration: underline;
+}
+
+.form-signin button[type="submit"] {
+  background-color: var(--secondary);
+  border-color: var(--secondary-dark);
+  color: #000;
+  margin-top: 15px;
+}
+
+.form-signin p {
+  color: white;
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 75px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input[type="checkbox"] ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a background color */
+.checkbox input[type="checkbox"]:checked ~ .checkmark {
+  background-color: var(--secondary);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: 10px;
+  top: 6px;
+  width: 6px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: var(--secondary);
+  color: black;
+}
+
+
