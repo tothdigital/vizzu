@@ -19,6 +19,8 @@ Route::redirect('/', '/site', 301);
 //     return view('welcome');
 // });
 
+Route::resource('app_professional', AppProIndexController::class);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
