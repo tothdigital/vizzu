@@ -14,7 +14,7 @@ class AppProIndexController extends Controller
      */
     public function index()
     {
-        return view('app_professional.index');
+        return view('app_pro.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class AppProIndexController extends Controller
      */
     public function create()
     {
-        //
+        return view('app_pro.register');
     }
 
     /**
