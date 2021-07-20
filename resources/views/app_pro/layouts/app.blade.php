@@ -14,7 +14,6 @@
 
 		<!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/signin.css" rel="stylesheet">
     <style>
 			.footer {
 				position: fixed;
