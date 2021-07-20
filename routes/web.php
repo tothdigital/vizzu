@@ -15,15 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/site', 301);
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::resource('/app_pro', App\Http\Controllers\AppProIndexController::class);
+Route::get('/app_pro', [App\Http\Controllers\AppProIndexController::class, 'index']);
 
-Route::resource('/app_pro2', App\Http\Controllers\AppProLoginController::class);
-
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/app_pro/login', [App\Http\Controllers\AppProLoginController::class, 'index']);
