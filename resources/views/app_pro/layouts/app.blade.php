@@ -6,14 +6,13 @@
 	<meta name="description" content="">
 	<meta name="author" content="Ramoel Assis, Paulo Henrique e Fabrício Aguilera">
 	<meta name="generator" content="Vizzu 0.1.0">
-	<!-- <title>Vizzu - @yield('title')</title> -->
-    <title>Vizzu</title>
+	<title>Vizzu - @yield('title')</title>
 
     <!-- Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
     <style>
 			.footer {
 				position: fixed;
