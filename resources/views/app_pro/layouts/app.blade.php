@@ -13,6 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/signin.css" rel="stylesheet">
     <style>
 			.footer {
