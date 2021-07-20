@@ -12,8 +12,8 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="assets/css/main.css" rel="stylesheet">
-	<link href="assets/css/signin.css" rel="stylesheet">
+	<link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets/css/signin.css') }}" rel="stylesheet">
 	<style>
 		.footer {
 			position: fixed;
@@ -44,7 +44,7 @@
 	<main class="form-signin">
 
 		<form>
-			<img class="mb-g4" src="assets/img/logo.png" alt="" width="250" height="60">
+			<img class="mb-g4" src="{{ asset('assets/img/logo.png') }}" alt="" width="250" height="60">
 			<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
 			<div class="form-floating">
