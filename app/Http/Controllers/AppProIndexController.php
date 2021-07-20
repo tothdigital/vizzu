@@ -17,11 +17,6 @@ class AppProIndexController extends Controller
         return view('app_pro.index');
     }
 
-
-    public function login()
-    {
-        return view('app_pro.login');
-    }
     /**
      * Show the form for creating a new resource.
      *
