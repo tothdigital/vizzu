@@ -19,7 +19,7 @@ Route::redirect('/', '/site', 301);
 //     return view('welcome');
 // });
 
-Route::resource('app_professional', App\Http\Controllers\AppProIndexController::class);
+Route::resource('app_pro', App\Http\Controllers\AppProIndexController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
